@@ -43,6 +43,11 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model("Contact", contactSchema);
 
+//health check
+app.get("/", (req, res) => {
+  res.json({ status: "ok", service: "TasteQuest API" });
+});
+
 
 app.post("/book", async (req, res) => {
     const { date, people, email, restaurantName, location, timeSlot } = req.body;

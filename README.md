@@ -7,7 +7,9 @@ The project was developed as an academic team project using **HTML, CSS, JavaScr
 # Live Demo 
 Frontend: https://sinchanahemanth.github.io/FWD_TasteQuest/
 
-Backend API: https://fwd-tastequest.onrender.com
+Backend API base URL: https://fwd-tastequest.onrender.com
+
+The root URL returns a health-check response only — the application endpoints are listed under Backend API Endpoints below.
 
 # Project Features
 
