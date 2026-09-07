@@ -5,7 +5,9 @@ TasteQuest is a full-stack restaurant discovery web application developed to hel
 The project was developed as an academic team project using **HTML, CSS, JavaScript, Node.js, Express.js, and MongoDB Atlas**.
 
 # Live Demo 
-https://sinchanahemanth.github.io/FWD_TasteQuest/
+Frontend: https://sinchanahemanth.github.io/FWD_TasteQuest/
+
+Backend API: https://fwd-tastequest.onrender.com
 
 # Project Features
 
@@ -19,6 +21,7 @@ https://sinchanahemanth.github.io/FWD_TasteQuest/
 - Contact the administrators through the Contact Us form.
 - Responsive user interface.
 - Frontend deployed using GitHub Pages.
+- Backend REST API deployed as a Node web service on Render.
 
 # Project Structure
 
@@ -70,7 +73,9 @@ FWD_TasteQuest
 
 ## Deployment
 
-- GitHub Pages
+- GitHub Pages (static frontend, served from the docs folder)
+- Render (Node.js backend web service)
+- MongoDB Atlas (managed cloud database)
 
 # System Workflow
 
@@ -149,7 +154,7 @@ Submits a contact request.
 ## Clone the Repository
 
 ```bash
-git clone https://github.com/SinchanaHemanth/FWD_TasteQuest.git
+git clone https://github.com/Shreya-Raj08/FWD_TasteQuest.git
 ```
 
 ## Backend Setup
@@ -174,8 +179,10 @@ Example:
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_app_password
+EMAIL_PASS=your_gmail_app_password
 ```
+
+Note: `EMAIL_PASS` must be a Gmail **App Password**, not your regular account password. Enable 2-Step Verification on the Google account and generate a 16-character App Password for Nodemailer to authenticate.
 
 Start the backend server.
 
@@ -193,6 +200,19 @@ docs/index.html
 
 or access the deployed GitHub Pages website.
 
+### Pointing the Frontend at a Local Backend
+
+By default the frontend calls the deployed Render API. To test against the backend you just started locally, replace the API base URL in `docs/script.js` (2 occurrences) and `docs/quiz.js` (2 occurrences):
+
+```js
+// from
+https://fwd-tastequest.onrender.com
+// to
+http://localhost:5000
+```
+
+Without this change the page will keep hitting the production API and your local server will receive no requests.
+
 # Project Highlights
 
 - Full-stack web application
@@ -202,7 +222,8 @@ or access the deployed GitHub Pages website.
 - Booking availability validation
 - Automatic email confirmations using Nodemailer
 - Contact form with database storage
-- GitHub Pages deployment
+- Frontend deployed on GitHub Pages
+- Backend deployed on Render
 
 # Future Enhancements
 
